@@ -1399,8 +1399,8 @@ int main(void)
  8000dbc:	4808      	ldr	r0, [pc, #32]	; (8000de0 <main+0x108>)
  8000dbe:	f7ff ff3e 	bl	8000c3e <_ZN5Print5printEh>
 
-        HAL_Delay( 500 );
- 8000dc2:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+        HAL_Delay( 1000 );
+ 8000dc2:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000dc6:	f000 fa99 	bl	80012fc <HAL_Delay>
         string texto = "imprimiendo texto con variable de tipo string";
  8000dca:	f107 033c 	add.w	r3, r7, #60	; 0x3c

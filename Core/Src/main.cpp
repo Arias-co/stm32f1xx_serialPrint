@@ -128,7 +128,7 @@ int main(void)
         char letra = 'h';
         serial.print( letra );
 
-        HAL_Delay( 500 );
+        HAL_Delay( 1000 );
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
