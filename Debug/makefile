@@ -45,24 +45,24 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-test_print.elf \
+stm32f1xx_serialPrint.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-test_print.list \
+stm32f1xx_serialPrint.list \
 
 OBJCOPY_BIN += \
-test_print.bin \
+stm32f1xx_serialPrint.bin \
 
 
 # All Target
-all: test_print.elf secondary-outputs
+all: stm32f1xx_serialPrint.elf secondary-outputs
 
 # Tool invocations
-test_print.elf: $(OBJS) $(USER_OBJS) /Users/arielarias/STM32CubeIDE/workspace_1.4.0/test_print/STM32F103C8TX_FLASH.ld
-	arm-none-eabi-g++ -o "test_print.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/Users/arielarias/STM32CubeIDE/workspace_1.4.0/test_print/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test_print.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+stm32f1xx_serialPrint.elf: $(OBJS) $(USER_OBJS) /Users/arielarias/STM32CubeIDE/workspace_1.4.0/stm32f1xx_serialPrint/STM32F103C8TX_FLASH.ld
+	arm-none-eabi-g++ -o "stm32f1xx_serialPrint.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/Users/arielarias/STM32CubeIDE/workspace_1.4.0/stm32f1xx_serialPrint/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f1xx_serialPrint.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -71,13 +71,13 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-test_print.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "test_print.list"
+stm32f1xx_serialPrint.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "stm32f1xx_serialPrint.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-test_print.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "test_print.bin"
+stm32f1xx_serialPrint.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "stm32f1xx_serialPrint.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

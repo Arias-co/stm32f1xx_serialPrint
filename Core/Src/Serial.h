@@ -8,9 +8,9 @@
 #ifndef SRC_SERIAL_H_
 #define SRC_SERIAL_H_
 
-#include "main.h"
-#include "Print.h"
 
+#include "Print.h"
+#include "stm32f1xx_hal.h"
 
 
 class Serial: public Print
