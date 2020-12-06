@@ -13,6 +13,12 @@
 #include "stm32f1xx_hal.h"
 
 
+typedef enum
+{
+    TIMEOUT,
+    INTER_BYTE_TIMEOUT
+} Mode_timeout_t;
+
 class Serial: public Print
 {
 private:
@@ -21,6 +27,7 @@ public:
 
     UART_HandleTypeDef *uart;
     Serial( UART_HandleTypeDef * uartx );
+    void receive( uint8_t * data, uint16_t timeout , Mode_timeout_t modeTimeout);
     virtual void write( uint8_t * text );
 
 };

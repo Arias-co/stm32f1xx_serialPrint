@@ -1,3 +1,4 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 Serial.cpp:11:1:Serial::Serial(UART_HandleTypeDef*)	16	static
-Serial.cpp:17:6:virtual void Serial::write(uint8_t*)	24	static
+Serial.cpp:17:6:void Serial::receive(uint8_t*, uint16_t, Mode_timeout_t)	32	static
+Serial.cpp:53:6:virtual void Serial::write(uint8_t*)	24	static

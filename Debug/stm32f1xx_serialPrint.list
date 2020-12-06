@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  000201e0  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00017b4b  00000000  00000000  00020209  2**0
+ 12 .debug_info   00017c0b  00000000  00000000  00020209  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 000028c0  00000000  00000000  00037d54  2**0
+ 13 .debug_abbrev 000028cf  00000000  00000000  00037e14  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_aranges 00000720  00000000  00000000  0003a618  2**3
+ 14 .debug_aranges 00000728  00000000  00000000  0003a6e8  2**3
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 00000648  00000000  00000000  0003ad38  2**3
+ 15 .debug_ranges 00000650  00000000  00000000  0003ae10  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_macro  0001836a  00000000  00000000  0003b380  2**0
+ 16 .debug_macro  00018e9c  00000000  00000000  0003b460  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   000085aa  00000000  00000000  000536ea  2**0
+ 17 .debug_line   000085db  00000000  00000000  000542fc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    0007925d  00000000  00000000  0005bc94  2**0
+ 18 .debug_str    000793cf  00000000  00000000  0005c8d7  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  000d4ef1  2**0
+ 19 .comment      0000007b  00000000  00000000  000d5ca6  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003b68  00000000  00000000  000d4f6c  2**2
+ 20 .debug_frame  00003b8c  00000000  00000000  000d5d24  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -1233,6 +1233,9 @@ Serial::Serial(UART_HandleTypeDef * uartx)
  8000ca8:	0800490c 	.word	0x0800490c
 
 08000cac <_ZN6Serial5writeEPh>:
+        }
+    }
+}
 
 void Serial::write( uint8_t  *text )
 {
